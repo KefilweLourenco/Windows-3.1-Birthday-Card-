@@ -1,0 +1,461 @@
+:root {
+  --desktop: #bdbdbd;
+  --window: #c0c0c0;
+  --window-light: #ffffff;
+  --window-dark: #808080;
+  --border-dark: #000000;
+  --blue: #0000a8;
+  --text: #000000;
+  --screen: min(92vw, 940px);
+  --shadow:
+    inset -1px -1px 0 #000,
+    inset 1px 1px 0 #fff,
+    inset -2px -2px 0 #808080,
+    inset 2px 2px 0 #dfdfdf;
+
+  font-family: 'Microsoft Sans Serif', 'MS Sans Serif', Tahoma, sans-serif;
+  color: var(--text);
+  background: #10334f;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0a7f80;
+}
+
+body.party {
+  background: linear-gradient(180deg, #0b7b7c 0%, #145f60 100%);
+}
+
+button, input { font: inherit; }
+button { border: 0; cursor: pointer; }
+#app { width: 100%; }
+
+.boot-screen,
+.desktop-shell {
+  width: var(--screen);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.boot-screen {
+  display: grid;
+  place-items: center;
+  background: #008080;
+}
+
+.boot-card {
+  width: 240px;
+  padding: 16px 14px 14px;
+  background: #c0c0c0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.boot-flag {
+  width: 64px;
+  height: 48px;
+  margin: 0 auto 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  transform: skew(-10deg);
+}
+
+.boot-flag span { display: block; }
+.boot-flag .red { background: #e01818; }
+.boot-flag .green { background: #1f9e35; }
+.boot-flag .blue { background: #1744d6; }
+.boot-flag .yellow { background: #f0d010; }
+
+.boot-wordmark {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.boot-version,
+.boot-copy,
+.boot-status {
+  font-size: 0.72rem;
+}
+
+.boot-version { margin-top: 6px; }
+.boot-copy { margin: 10px 0 12px; }
+.boot-status { margin-top: 10px; }
+
+.boot-bar {
+  height: 16px;
+  padding: 2px;
+  background: var(--window);
+  box-shadow: var(--shadow);
+}
+
+.boot-fill {
+  height: 100%;
+  width: 0;
+  background: var(--blue);
+  animation: load 3s steps(18) forwards;
+}
+
+.desktop-shell {
+  display: none;
+  background: var(--desktop);
+  padding: 14px;
+}
+
+.desktop-shell.active { display: block; }
+
+.program-manager {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--window);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.title-bar {
+  height: 22px;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.title-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.title-mark {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+
+.title-actions {
+  display: flex;
+  gap: 2px;
+}
+
+.title-button {
+  width: 17px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--window);
+  color: #111;
+  box-shadow: var(--shadow);
+  font-size: 0.72rem;
+}
+
+.menu-bar {
+  height: 24px;
+  padding: 5px 8px;
+  display: flex;
+  gap: 18px;
+  font-size: 0.78rem;
+  background: var(--window-light);
+  box-shadow: inset 0 -1px 0 #808080;
+}
+
+.child-window {
+  position: absolute;
+  background: var(--window);
+  box-shadow: var(--shadow);
+}
+
+.group-window {
+  top: 40px;
+  left: 154px;
+  width: 386px;
+  height: 170px;
+}
+
+.child-title {
+  height: 20px;
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 0.76rem;
+  background: var(--window-light);
+  box-shadow: inset 0 -1px 0 #808080;
+}
+
+.icon-grid {
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px 12px;
+}
+
+.pm-icon {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.pm-glyph {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  background: linear-gradient(180deg, #fff6b0, #ffd54a);
+  border: 1px solid #111;
+}
+
+.pm-glyph::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 3px;
+  width: 12px;
+  height: 6px;
+  background: #fff6b0;
+  border: 1px solid #111;
+  border-bottom: 0;
+}
+
+.pm-glyph.control { background: linear-gradient(180deg, #d9d9d9, #9e9e9e); }
+.pm-glyph.printer { background: linear-gradient(180deg, #d0d0ff, #9090cc); }
+.pm-glyph.clip { background: linear-gradient(180deg, #ffe0e0, #d8a0a0); }
+.pm-glyph.msdos { background: linear-gradient(180deg, #111, #444); }
+
+.pm-label {
+  font-size: 0.66rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.birthday-window {
+  top: 190px;
+  left: 86px;
+  right: 28px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.child-window-title {
+  flex: 0 0 auto;
+}
+
+.birthday-body {
+  flex: 1;
+  min-height: 0;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) 220px;
+  gap: 10px;
+}
+
+.message-pane,
+.panel-box {
+  background: var(--window-light);
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #fff;
+}
+
+.message-pane {
+  padding: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.pane-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.76rem;
+}
+
+.message-card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.message-line {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.signature-box {
+  margin-top: 8px;
+  padding: 8px;
+  display: grid;
+  gap: 3px;
+  font-size: 0.76rem;
+  background: var(--window);
+  box-shadow:
+    inset -1px -1px 0 #fff,
+    inset 1px 1px 0 #808080;
+}
+
+.tools-pane {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.panel-box {
+  padding: 10px;
+}
+
+.panel-title {
+  margin: 0 0 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.config-form {
+  display: grid;
+  gap: 8px;
+}
+
+.config-form label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.74rem;
+}
+
+.config-form input {
+  width: 100%;
+  padding: 5px 6px;
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow:
+    inset -1px -1px 0 #fff,
+    inset 1px 1px 0 #808080;
+}
+
+.command-stack {
+  display: grid;
+  gap: 6px;
+}
+
+.win-button {
+  width: 100%;
+  padding: 6px 8px;
+  background: var(--window);
+  box-shadow: var(--shadow);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.win-button:active {
+  box-shadow:
+    inset 1px 1px 0 #000,
+    inset -1px -1px 0 #fff,
+    inset 2px 2px 0 #808080,
+    inset -2px -2px 0 #dfdfdf;
+}
+
+.toast {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: min(260px, calc(100% - 36px));
+  padding: 10px 12px;
+  background: var(--window);
+  box-shadow: var(--shadow);
+  font-size: 0.74rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+
+.confetti.show { display: block; }
+
+.confetti span {
+  position: absolute;
+  top: -12%;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: fall linear forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes fall {
+  to { transform: translateY(125%) rotate(420deg); }
+}
+
+@media (max-width: 760px) {
+  .desktop-shell,
+  .boot-screen {
+    aspect-ratio: auto;
+    height: min(94vh, 860px);
+  }
+
+  .group-window {
+    display: none;
+  }
+
+  .birthday-window {
+    top: 46px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .birthday-body {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+}
