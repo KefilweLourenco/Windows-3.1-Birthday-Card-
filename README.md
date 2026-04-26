@@ -102,8 +102,8 @@ controle visual de layout com inspiração em software legado
 experimentação com prototipação assistida por IA
 refatoração manual de código gerado
 transformação de uma ideia pessoal em um artefato apresentável para portfólio
-👨‍💻 Autor
-Desenvolvido por Kefilwe Lourenço
+
+👨‍💻 Desenvolvido por Kefilwe Lourenço
 
 ⚠️ Aviso
 Este projeto é um experimento visual e educacional, sem qualquer vínculo oficial com a Microsoft.
