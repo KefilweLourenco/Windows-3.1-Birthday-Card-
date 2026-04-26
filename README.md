@@ -1,112 +1,110 @@
-# Birthday Card 1992 UI Experiment
+ 🎂 Windows 3.1 Birthday Card
 
-A front-end experiment built in TypeScript and Vite, inspired by early 1990s Microsoft interfaces, especially the visual language of Windows NT 3.1 / Program Manager.
+> "Hoje o Program Manager abriu um atalho especial..."
 
-The project renders a retro birthday card UI with editable fields for the celebrant name and sender name, using a desktop-like composition, classic window chrome, and a boot/splash sequence before the main interface appears.
+Este projeto é uma experiência interativa inspirada na interface clássica do **Windows NT 3.1 / Program Manager**, recriada para apresentar uma mensagem de aniversário personalizada em estilo retrô.
 
-## Demo
+A proposta foi explorar composição visual inspirada em softwares de 1992, com foco em **tipografia**, **estrutura de janelas**, **hierarquia visual**, **interação simples** e **fidelidade estética** de interfaces legadas.
 
-- Video demo: [docs/demo.mp4](docs/demo.mp4)
+---
 
-## Technical Summary
+## 🚀 Demonstração
 
-- Stack: TypeScript, Vite, CSS
-- Rendering model: DOM-driven UI generated from `src/main.ts`
-- Styling approach: handcrafted CSS with retro window system layout and period-inspired typography
-- Interaction model: simple client-side state updates for celebrant/sender personalization and UI actions
+Vídeo de demonstração do projeto:
 
-## AI Assistance and Manual Refactoring
+[Demo em vídeo](https://github.com/user-attachments/assets/97cb1dd5-d42e-4fd8-a5a9-5989059a7ad0)
 
-This repository was developed with AI assistance during ideation, layout exploration, and implementation drafting.
+---
 
-The final result also involved manual refactoring and iterative code adjustments, especially in:
+## 🛠️ Tecnologias e conceitos
 
-- layout restructuring
-- visual fidelity tuning based on historical references
-- spacing, overflow, and window composition corrections
-- content organization for a cleaner repository presentation
+- **TypeScript + Vite:** estrutura leve para desenvolvimento rápido e organização da interface
+- **CSS puro:** construção manual da estética visual inspirada em sistemas Windows do início dos anos 90
+- **Manipulação de DOM:** atualização dinâmica dos campos de aniversariante e remetente
+- **Animação de boot:** simulação de inicialização com barra de progresso e transição para a interface principal
+- **Composição de UI retrô:** barras de título, janelas filhas, menu superior, grupos de atalhos e caixas de configuração
 
-In other words, this is not a raw AI dump. It is an AI-assisted prototype refined through manual technical decisions.
+---
 
-## Why This Project Exists
+## 🧠 Processo de desenvolvimento
 
-The goal of this project was to explore:
+Este projeto foi desenvolvido com apoio do **Codex (OpenAI)** como ferramenta de prototipação, exploração de layout e assistência técnica durante a implementação.
 
-- nostalgic UI recreation with web technologies
-- interface composition inspired by 1992 desktop software
-- rapid prototyping with TypeScript
-- practical collaboration between human review and AI-assisted generation
+A partir dessas interações, o código passou por **refatoração manual**, revisão visual, ajustes de estrutura e correções guiadas até chegar na versão final publicada neste repositório.
 
-## Running Locally
+Ou seja, o projeto foi construído em um fluxo de **desenvolvimento assistido por IA + direção humana + refinamento manual**, com foco em aprendizado, experimentação visual e melhoria contínua da interface.
 
-### Requirements
+---
 
-- Node.js
-- npm
+## 📂 Estrutura da interface
 
-### Install dependencies
+1. **Boot Screen**  
+   Simula a inicialização de um ambiente Windows NT 3.1 com barra de carregamento e splash retrô.
 
-```bash
+2. **Program Manager**  
+   Tela principal inspirada no gerenciador de programas clássico, com barra de menu e grupo de atalhos.
+
+3. **Birthday Card Window**  
+   Janela principal que apresenta a mensagem de aniversário personalizada.
+
+4. **Settings / Actions**  
+   Painéis laterais que permitem alterar o nome do aniversariante e do remetente, além de acionar interações da interface.
+
+---
+
+## ⚙️ Como executar localmente
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/Windows-3.1-Birthday-Card.git
+Acesse a pasta do projeto
+
+cd Windows-3.1-Birthday-Card
+Instale as dependências
+
 npm install
-```
+Inicie o ambiente de desenvolvimento
 
-### Start development server
-
-```bash
 npm run dev
-```
+Abra no navegador
+Normalmente o Vite disponibiliza o projeto em:
 
-Open the local URL shown by Vite, usually:
-
-```bash
 http://localhost:5173/
-```
+🧪 Personalização
+A interface permite personalização em tempo real por meio dos campos:
 
-## Build
+nome do aniversariante
+nome de quem está enviando
+Também é possível definir valores iniciais com base no arquivo .env.example.
 
-```bash
-npm run build
-```
+Exemplo:
 
-Production assets are generated in `dist/`.
-
-## Personalization
-
-You can personalize the interface in two ways.
-
-### 1. Through the UI
-
-Use the fields rendered in the window:
-
-- celebrant name
-- sender name
-
-Then click `Apply`.
-
-### 2. Through environment variables
-
-Create a `.env` file based on `.env.example`.
-
-Example:
-
-```env
 VITE_CELEBRANT_NAME=Thais
 VITE_SENDER_NAME=Kefilwe Lourenco
-```
+🧱 Estrutura do projeto
+src/main.ts
+Estrutura principal da interface, eventos e atualização dinâmica dos dados.
 
-## Project Structure
+src/style.css
+Toda a estilização do layout retrô, janelas, menus, painéis e animações.
 
-- `src/main.ts`: UI structure and interaction logic
-- `src/style.css`: full retro layout and styling rules
-- `docs/demo.mp4`: recorded demonstration video
-- `.env.example`: optional initial personalization values
+docs/demo.mp4
+Vídeo de demonstração do projeto rodando.
 
-## Notes
+.env.example
+Exemplo de configuração inicial para personalização dos nomes.
 
-This project is intentionally small in scope and focused on interface experimentation rather than production architecture.
+🎯 Objetivo do projeto
+Como exercício técnico e criativo, este projeto foi útil para praticar:
 
-It works best as:
+recriação de interfaces históricas com HTML, CSS e TypeScript
+controle visual de layout com inspiração em software legado
+experimentação com prototipação assistida por IA
+refatoração manual de código gerado
+transformação de uma ideia pessoal em um artefato apresentável para portfólio
+👨‍💻 Autor
+Desenvolvido por Kefilwe Lourenço
 
-- a creative front-end study
-- a nostalgic UI recreation exercise
-- a portfolio example of AI-assisted prototyping plus manual refinement
+⚠️ Aviso
+Este projeto é um experimento visual e educacional, sem qualquer vínculo oficial com a Microsoft.
+
