@@ -12,7 +12,7 @@ A proposta foi explorar composição visual inspirada em softwares de 1992, com 
 
 Vídeo de demonstração do projeto:
 
-[Demo em vídeo](https://github.com/user-attachments/assets/97cb1dd5-d42e-4fd8-a5a9-5989059a7ad0)
+[Demo em vídeo](https://github.com/user-attachments/assets/556db026-44f0-4521-b5bf-9ab56a310426)
 
 ---
 
